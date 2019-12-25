@@ -136,7 +136,7 @@ ref: refs/heads/master
 
 对，我理解的引用文件就是指针，里面存放的内容就是键值，可以直接找到对应的对象文件，拿到想要的内容，引用的分类和介绍如下图：
 
-![refs](https://raw.githubusercontent.com/gewuang/cloudimg/master/data/20191225232655.png)
+![refs](https://raw.githubusercontent.com/gewuang/cloudimg/master/data/20191226000400.png)
 
 HEAD我认为也是一种引用，不过它比较特殊，是**符号引用**，因为它存放的内容为就是文件路径，如master的` refs/heads/master`，像极了软链接的样子。
 
@@ -156,7 +156,7 @@ HEAD我认为也是一种引用，不过它比较特殊，是**符号引用**，
 
 git存放数据对象的时候会把整个文件都存到数据对象中，即使有zlib压缩，你可能也会疑惑，我项目这么大，这么多提交，.git目录不是早就爆掉了么，你能想到的设计的人肯定也想到的，所以就有了包文件，他存在的意义就是将对象进行打包，节省空间。
 
-![packet](https://raw.githubusercontent.com/gewuang/cloudimg/master/data/20191225234856.png)
+![packet](https://raw.githubusercontent.com/gewuang/cloudimg/master/data/20191226000525.png)
 
 上图介绍的很清楚了（请自动把引用两个字替换成packet，笔误），不过还有一点注意的是相同的文件修改后的数据对象打包后，前一个对象保存的是差异，而文件的全部内容存放在包中此文件最新的数据对象中，因为git认为最新的是人们访问几率最大的，这个设计是为了节省计算的时间，提高效率。
 
@@ -173,7 +173,7 @@ git存放数据对象的时候会把整个文件都存到数据对象中，即�
 ```shell
 [alias]
     glf  = log -n 10 --name-only  --format=\"%Cgreen%h %Cred[%ci] %Creset<%an> %Creset %Cgreen%s %Creset
-    gl  = log -n 30 --date-order  --format=\"%Cgreen%h %Cred[%ci] %Creset <%an>%C(yellow)%d%Creset %Cres                eset \"
+    gl  = log -n 30 --date-order  --format=\"%Cgreen%h %Cred[%ci] %Creset <%an>%C(yellow)%d%Creset %Creseset \"
     gll  = log -n 30  --format=\"%Cgreen%H %Cred[%ci] %Creset<%an> %Creset %Cgreen%s %Creset \"
     gl3 = log -n 20  --format=\"%Cgreen%h %Cred[%ci] %Creset<%an> %Creset %Cgreen%s %Creset \" --graph
     gl2 = log --format=\"%Cgreen%h %Cred[%ci] %Creset<%an> %Creset %Cgreen%s %Creset \"
@@ -183,7 +183,7 @@ git存放数据对象的时候会把整个文件都存到数据对象中，即�
             glw = log  -n 20  --format=\"%Cgreen%h %Cred[%ci] %Creset<%an> %Creset %n%Cgreen%s%Creset%n%b  \"
     #| grep \"+0800]\"
     gldetail = log --format=\"%h `[%cd] `<committer:%cn> `[%ad] `<author:%an> ` %s \"
-    hist = log --pretty=format:\"%C(yellow)%h %C(red)%d %C(reset)%s %C(green)[%an] %C(blue)%ad\" --topo-order --graph           latest = for-each-ref --sort=-committerdate --format=\"%(committername)@%(refname:short) [%(committerdate:short)] %(contents)\"
+    hist = log --pretty=format:\"%C(yellow)%h %C(red)%d %C(reset)%s %C(green)[%an] %C(blue)%ad\" --topo-order --graph latest = for-each-ref --sort=-committerdate --format=\"%(committername)@%(refname:short) [%(committerdate:short)] %(contents)\"
         #gldetail = log --format=\"%h [%cd] <committer:%cn> :[%ad] <author:%an>  %s \"
 
     st = status -uno -s
