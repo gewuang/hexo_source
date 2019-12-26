@@ -1,7 +1,7 @@
 ---
 layout: mypost
 title: JAVA学习路线整理(持续更新) 
-date: 2019-12-25 11:14:07
+date: 2019-12-22 11:14:07
 categories: [Java]
 tags: "Java" 
 ---
@@ -53,6 +53,7 @@ tags: "Java"
 ## JAVA基础语法
 
 - 语法基础
+    [java基础知识](/2019/12/25/Java_basic/)
 - 编程思想：类、对象、封装、继承、多态、接口
 - 容器
 - 异常

@@ -1,3 +1,11 @@
+---
+layout: mypost
+title: JAVA基础知识(持续更新) 
+date: 2019-12-25 14:06:07
+categories: [Java]
+tags: "Java" 
+---
+
 # 语法基础
 
 # 编程思想
@@ -202,6 +210,5 @@
 # 注解与反射
 
 # 图形化界面
-
 
 
